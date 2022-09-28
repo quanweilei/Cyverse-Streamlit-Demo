@@ -1,7 +1,5 @@
 
-echo "input git link"
-read gitfile
-git clone ${gitfile}
+git clone ${git}
 cd Streamlit-test
 ls
 pip install --upgrade pip

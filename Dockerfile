@@ -16,5 +16,6 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 RUN ["chmod", "+x", "./app.sh"]
 
+ENV git=link
  
 ENTRYPOINT ["bash", "app.sh"]
