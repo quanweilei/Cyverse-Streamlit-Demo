@@ -1,8 +1,24 @@
+while getopts "g:" opt; do
+  case ${opt} in
+    g)
+      git=$OPTARG
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument." >&2
+      exit 1
+      ;;
+  esac
+done
 
 git clone ${git}
 cd Streamlit-test
-ls
+
 pip install --upgrade pip
 pip install -r ./requirements.txt
 
-streamlit run streamlit.py server.port=8501 --server.address=0.0.0.0
+
+streamlit run streamlit.py -server.enableCORS false --server.enableXsrfProtection false
