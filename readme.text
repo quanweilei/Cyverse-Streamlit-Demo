@@ -1,0 +1,4 @@
+HOW TO RUN DOCKERFILE
+
+docker build -t streamlittest:latest .
+docker run --rm -e "git={your git link}" -p 8501:8501 -it streamlittest:latest
